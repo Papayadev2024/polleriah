@@ -6,9 +6,77 @@
   }
 </style>
 
-<header id="main-header" class="sticky top-0 right-0 z-[200] bg-transparent h-[96px] pt-5">
-  
-  <div>
+<header id="main-header" class="sticky top-0 w-full z-40">
+
+      <div class="left-0 right-0 z-[200]">
+        {{-- Top bar --}}
+        <div class="bg-[#F07407] z-[1000] relative font-galano_medium text-sm">
+            <div class="flex flex-row justify-between items-center py-4 h-10 w-full px-[5%] text-white text-sm">
+                <div class="flex flex-row justify-center items-start gap-2 font-latoregular">
+                    <span><img src="{{ asset('images/img/ubicacion.svg') }}" alt="Ubicación"></span>
+                    <p>Abancay - Apurimac - Perú</p>
+                </div>
+
+                <div class="flex flex-col justify-center items-center font-latobold">
+                    <div class="bg-[#54340E] px-3 py-2 rounded-lg">
+                        <p class="leading-none">Ordena aquí</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- Navbar --}}
+        <div class="flex justify-between w-full px-[5%] bg-[#f2f5f7]">
+            <nav class="flex h-[100px] items-center justify-between gap-10 w-full">
+                <input
+                    type="checkbox"
+                    id="menu"
+                    class="peer/menu menu hidden"
+                />
+                <label
+                    for="menu"
+                    class="transition-all flex flex-col gap-1 z-40 lg:hidden hamburguesa justify-center items-center order-3 lg:order-3"
+                >
+                    <p class="w-7 h-1 bg-[#082252] transition-transform duration-500"></p>
+                    <p class="w-7 h-1 bg-[#082252] transition-transform duration-500"></p>
+                    <p class="w-7 h-1 bg-[#082252] transition-transform duration-500"></p>
+                </label>
+
+                <div class="flex justify-center items-center z-40">
+                    <a href="{{ url('/') }}">
+                        <img
+                            src="{{ asset('images/img/logopolleria.svg') }}"
+                            alt="Cremoso"
+                            class="w-[80px]"
+                        />
+                    </a>
+                </div>
+
+                <ul
+                    class="font-bignoodle text-2xl text-[#54340E] pt-40 fixed inset-0 bg-[#f2f5f7] px-[5%] flex flex-col lg:flex-row lg:items-center clip-circle-0 peer-checked/menu:clip-circle-full transition-[clip-path] duration-500 gap-5 lg:gap-10 lg:clip-circle-full lg:relative lg:flex lg:justify-items-center lg:p-0 lg:bg-transparent flex-1"
+                >
+                    <div class="flex flex-col font-normal lg:flex-row order-2 lg:order-1 lg:w-full lg:justify-end gap-5 lg:gap-10">
+                        <li class="flex flex-col">
+                            <a href="{{ url('/') }}" class="">Inicio</a>
+                        </li>
+                        <li class="flex flex-col">
+                            <a href="{{ url('/nosotros') }}" class="">Nosotros</a>
+                        </li>
+                        <li class="flex flex-col">
+                            <a href="{{ route('catalogo.all') }}" class="">Carta y Promos</a>
+                        </li>
+                        <li class="flex flex-col">
+                            <a href="{{ url('/blog/0') }}" class="">Wayquicha</a>
+                        </li>
+                        <li class="flex flex-col">
+                            <a href="{{ url('/contacto') }}" class="">Contacto</a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </div>
+  {{-- <div>
     <div class="flex justify-between w-full px-[5%] mx-auto">
       <nav class="flex h-24 items-center justify-between gap-10 w-full">
         <input type="checkbox" id="menu" class="peer/menu menu hidden" />
@@ -33,53 +101,53 @@
             <li class="flex flex-col">
               <a href="{{ route('index') }}"
                 class="{{ isset($pagina) && $pagina == 'index' ? 'font-semibold' : '' }}">Inicio</a>
-              {{-- @if (isset($pagina) && $pagina == 'index')
+              @if (isset($pagina) && $pagina == 'index')
                 <p
                   class="hidden lg:block lg:after:content-[''] lg:after:w-full lg:after:h-[2px] lg:after:bg-[#FF5E14] lg:after:block">
                 </p>
-              @endif --}}
+              @endif
             </li>
             
             <li class="flex flex-col">
               <a href="{{ route('catalogo', 0) }}"
                 class="{{ isset($pagina) && $pagina == 'catalogo' ? ' font-semibold' : '' }}">Productos</a>
-              {{-- @if (isset($pagina) && $pagina == 'catalogo')
+              @if (isset($pagina) && $pagina == 'catalogo')
                 <p
                   class="hidden lg:block lg:after:content-[''] lg:after:w-full lg:after:h-[2px] lg:after:bg-[#FF5E14] lg:after:block">
                 </p>
-              @endif --}}
+              @endif
             </li>
             <li class="flex flex-col">
               <a href="{{ route('innovaciones') }}"
                 class="{{ isset($pagina) && $pagina == 'innovaciones' ? ' font-semibold' : '' }}">Innovaciones</a>
-              {{-- @if (isset($pagina) && $pagina == 'blog')
+              @if (isset($pagina) && $pagina == 'blog')
                 <p
                   class="hidden lg:block lg:after:content-[''] lg:after:w-full lg:after:h-[2px] lg:after:bg-[#FF5E14] lg:after:block">
                 </p>
-              @endif --}}
+              @endif
             </li>
             <li class="flex flex-col">
               <a href="{{ route('nosotros') }}"
                 class="{{ isset($pagina) && $pagina == 'nosotros' ? ' font-semibold' : '' }}">Nosotros</a>
-              {{-- @if (isset($pagina) && $pagina == 'nosotros')
+              @if (isset($pagina) && $pagina == 'nosotros')
                 <p
                   class="hidden lg:block lg:after:content-[''] lg:after:w-full lg:after:h-[2px] lg:after:bg-[#FF5E14] lg:after:block">
                 </p>
-              @endif --}}
+              @endif
             </li>
             <li class="flex flex-col">
               <a href="{{ route('contacto') }}"
                 class="{{ isset($pagina) && $pagina == 'contacto' ? ' font-semibold' : '' }}">Contacto</a>
-              {{-- @if (isset($pagina) && $pagina == 'contacto')
+              @if (isset($pagina) && $pagina == 'contacto')
                 <p
                   class="hidden lg:block lg:after:content-[''] lg:after:w-full lg:after:h-[2px] lg:after:bg-[#FF5E14] lg:after:block">
                 </p>
-              @endif --}}
+              @endif
 
             </li>
           </div>
 
-          {{-- <div
+          <div
             class="relative w-full order-1 lg:order-2  lg:w-[20%] pb-8 lg:py-0 border-b lg:border-0 border-[#082252]">
             <input id="buscarproducto" type="text" placeholder="Buscar..."
               class="w-full pl-8 pr-10 py-2 border border-[#082252] lg:border-[#E6E4E5] rounded-lg focus:outline-none focus:ring-0 text-[#082252] placeholder:text-[#082252] lg:placeholder:text-[#E6E4E5]">
@@ -93,12 +161,12 @@
             </span>
 
             <div class="bg-white z-60 shadow-2xl top-12 w-full absolute overflow-y-auto max-h-[200px]" id="resultados"></div>  
-          </div> --}}
+          </div>
           
         </ul>
       </nav>
     </div>
-  </div>
+  </div> --}}
 
   <div class="flex justify-end w-full mx-auto z-[100] relative">
     <div class="fixed bottom-6 sm:bottom-[2rem] lg:bottom-[4rem] z-20 cursor-pointer">
@@ -370,7 +438,7 @@
       }
   });
 </script>
-<script>
+{{-- <script>
        function applyScrollStyles() {
             const header = document.getElementById('main-header');
             const logo = document.getElementById('imagenlogo');
@@ -398,4 +466,4 @@
 
         window.addEventListener('DOMContentLoaded', applyScrollStyles);
         window.addEventListener('scroll', applyScrollStyles);
-</script>
+</script> --}}

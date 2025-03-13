@@ -41,12 +41,11 @@ export default {
                 blue: '2px solid rgba(0, 112, 244, 0.5)',
             },
             fontFamily: {
-                gotham_black: ["gotham_black"],
-                gotham_bold: ["gotham_bold"],
-                gotham_book: ["gotham_book"],
-                gotham_light: ["gotham_light"],
-                gotham_medium: ["gotham_medium"],
-             
+                bignoodle: ["bignoodle"],
+                bignoodlecurve: ["bignoodlecurve"],
+                latolight: ["latolight"],
+                latoregular: ["latoregular"],
+                latobold: ["latobold"],
             },
             fontSize: {
                 xs: ['0.75rem', { lineHeight: '1.5' }],
@@ -107,6 +106,7 @@ export default {
                 bgButtonBaseGreen: "#BFDE8E",
                 bgRosa: "#F5F5F5",
             },
+            
             textColor: {
                 colorSubtitle: "#113E55",
                 colorSubtitleLittle: "#173525",
@@ -139,6 +139,7 @@ export default {
                 xl: "1280px",
                 "2xl": "1536px",
             },
+
             borderWidth: {
                 3: '3px',
             },
