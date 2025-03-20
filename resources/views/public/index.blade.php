@@ -182,7 +182,7 @@
                             <a href="{{route('producto', $ultimoProducto->id)}}">
                                 <h2 class="font-latoregular text-lg line-clamp-1">{{$ultimoProducto->producto}}</h2>
                             </a>
-                            <p class="font-latoregular text-sm max-w-md line-clamp-1">{!! $ultimoProducto->extract ?? $ultimoProducto->description !!} asdasdassssasdasdasdasdasa</p>
+                            <p class="font-latoregular text-sm max-w-md line-clamp-1">{!! $ultimoProducto->extract ?? $ultimoProducto->description !!}</p>
                         </div>
                         <div class="flex flex-row justify-start items-center gap-3 xl:gap-0 xl:flex-col xl:items-start font-latobold">
                            @if ($ultimoProducto->descuento > 0)
@@ -200,8 +200,12 @@
 
             <div class="w-full lg:w-[45%] min-h-96 flex flex-row items-start"> 
                 <div class="flex flex-col gap-2">
-                    <h2 class="font-bignoodle text-5xl text-[#54340E]">Las promos del mes</h2>
-                    <p class="font-latoregular text-lg text-[#54340E]">Mauris gravida, nunc quis egestas tempus, quam quam cursus lectus, nec placerat sapien felis vitae dui.</p>
+                    @if ($textoshome->title1section)
+                        <h2 class="font-bignoodle text-5xl text-[#54340E]">{{$textoshome->title1section}}</h2>
+                    @endif
+                    @if ($textoshome->description1section)
+                        <p class="font-latoregular text-lg text-[#54340E]">{{$textoshome->description1section}}</p>
+                    @endif
                     <div class="swiper ofertas w-full mt-1 h-[300px] sm:h-[350px] md:h-[360px]">
 
                         <div class="swiper-wrapper ">
@@ -254,11 +258,14 @@
         @else
             <section class="flex flex-col justify-center items-center px-[5%] xl:px-[8%] py-10 lg:py-16 bg-[#F1EBE3] gap-12 relative">
                 <div class="flex flex-col justify-start gap-3 md:flex-row md:justify-between w-full md:items-center">
-                    <h2 class="text-[#54340E] font-bignoodle text-5xl">Nuestra Carta</h2>
+                    @if ($textoshome->title2section)
+                        <h2 class="text-[#54340E] font-bignoodle text-5xl">{{$textoshome->title2section}}</h2>
+                    @endif
                     <div class="flex flex-row">
-                        <a href="{{route('catalogo.all')}}"><div class="bg-[#F07407] text-white rounded-lg px-3 py-1.5 text-base font-latoregular">
-                        Ver toda la carta
-                        </div>
+                        <a href="{{route('catalogo.all')}}">
+                            <div class="bg-[#F07407] text-white rounded-lg px-3 py-1.5 text-base font-latoregular">
+                                 Ver toda la carta
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -289,7 +296,9 @@
             <section class="flex flex-col justify-center items-center px-[5%] xl:px-[8%] py-10 lg:py-16 bg-white gap-12 relative">
 
                 <div class="flex flex-col justify-start gap-3 md:flex-row md:justify-between w-full md:items-center">
-                    <h2 class="text-[#54340E] font-bignoodle text-5xl">Nuestros recomendados</h2>
+                    @if ($textoshome->title3section)
+                        <h2 class="text-[#54340E] font-bignoodle text-5xl">{{$textoshome->title3section}}</h2>
+                    @endif
                     <div class="flex flex-row">
                         <a href="{{route('catalogo.all')}}">
                             <div class="bg-[#F07407] text-white rounded-lg px-3 py-1.5 text-base font-latoregular">Ver todos los recomendados</div>
@@ -357,10 +366,15 @@
                 <form id="footerBlog_Catalogo">
                     @csrf
                     <div class="flex flex-col gap-2 justify-center items-center py-10 lg:py-16 px-[5%]">
-                        <h2 class="text-white font-bignoodle text-5xl z-10 text-center">Suscríbete a nuestro blog</h2>
-                        <p class="text-white text-base font-latoregular w-full leading-tight text-center z-10">
-                            Sea el primero en conocer los lanzamientos y las novedades y perspectivas de la industria.
-                        </p>
+                        
+                        @if ($textoshome->title4section)
+                            <h2 class="text-white font-bignoodle text-5xl z-10 text-center">{{$textoshome->title4section}}</h2>
+                        @endif
+                        @if ($textoshome->description4section)
+                            <p class="text-white text-base font-latoregular w-full leading-tight text-center z-10">
+                                {{$textoshome->description4section}}
+                            </p>
+                        @endif
                         <div class="z-10 mt-8 flex flex-col gap-2">
                             <div class="md:space-x-2 bg-white px-5 py-3 rounded-xl overflow-hidden min-w-[250px] w-full flex flex-col md:flex-row gap-3">
                                 <input type="email" name="email" id="emailFooter2" required
@@ -373,9 +387,12 @@
                                     Suscribir
                                 </button>
                             </div>
-                            <p class="text-white text-sm font-latoregular w-full leading-tight text-center z-10">
-                                Nos preocupamos por tus datos en nuestra política de privacidad
-                            </p>
+                            
+                            @if ($textoshome->footer4section)
+                                <p class="text-white text-sm font-latoregular w-full leading-tight text-center z-10">
+                                    {{$textoshome->footer4section}}
+                                </p>
+                            @endif
                         </div>
                     </div>
                 </form>
@@ -387,10 +404,15 @@
             
             <form id="formContactos" class="w-full md:w-1/2 flex flex-col gap-3">
                 @csrf
-                <h2 class="text-[#54340E] font-bignoodle text-5xl">Nuestra Carta</h2>
-                <p class="text-[#54340E] text-lg font-latoregular w-full leading-tight">
-                  Recetas tradicionales peruanas, frescas y deliciosas, directo a tu puerta.
-                </p>
+                @if ($textoshome->title5section)
+                    <h2 class="text-[#54340E] font-bignoodle text-5xl">{{$textoshome->title5section}}</h2>
+                @endif
+                
+                @if ($textoshome->description5section)
+                    <p class="text-[#54340E] text-lg font-latoregular w-full leading-tight">
+                        {{$textoshome->description5section}}
+                    </p>
+                @endif
       
                 <div class="flex flex-col gap-1">
                   <label class="text-[#54340E] text-base font-latoregular font-semibold w-full leading-tight">Nombre completo</label>

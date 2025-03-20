@@ -124,9 +124,9 @@
 
        
 
-        <div class="w-full bg-[#F5F7F9] py-10 lg:py-16 px-0 lg:px-[5%]">
+        {{-- <div class="w-full bg-[#F5F7F9] py-10 lg:py-16 px-0 lg:px-[5%]">
             <img class="w-full object-cover object-center h-60 sm:h-96 lg:h-[450px]" src="{{asset('images/img/bannercontacto.png')}}" />
-        </div>
+        </div> --}}
 
       
         <section class="bg-[#54340E] bg-cover bg-opacity-100 relative flex flex-col gap-2">

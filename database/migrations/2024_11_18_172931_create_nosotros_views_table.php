@@ -16,16 +16,17 @@ return new class extends Migration
             
             $table->string('title1section')->nullable();
             $table->text('description1section')->nullable();
-            $table->string('url_image2section')->nullable();
-            
-            $table->string('title3section')->nullable();
-            $table->string('url_image4section')->nullable();
 
-            $table->string('title3secondsection')->nullable();
-            $table->text('description3secondsection')->nullable();
-            $table->string('title4section')->nullable();
+            $table->string('title2section')->nullable();
+            $table->text('description2section')->nullable();
+            
+            $table->text('description3section')->nullable();
             $table->text('description4section')->nullable();
 
+            $table->string('title5section')->nullable();
+            $table->text('description5section')->nullable();
+            $table->text('footer5section')->nullable();
+           
             $table->timestamps();
         });
     }
