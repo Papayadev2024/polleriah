@@ -46,7 +46,7 @@
                     <a href="{{ url('/') }}">
                         <img
                             src="{{ asset('images/img/logopolleria.svg') }}"
-                            alt="Cremoso"
+                            alt="Polleria Huaillys"
                             class="w-[80px]"
                         />
                     </a>

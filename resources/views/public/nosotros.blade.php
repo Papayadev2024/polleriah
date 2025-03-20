@@ -40,25 +40,19 @@
 @section('content')
     <main>
 
-        <section class="flex flex-col lg:flex-row gap-10 lg:gap-10 justify-center items-center px-[5%] lg:pl-0 lg:pr-0 -mt-24 bg-cover bg-top pt-32" style="background-image:url({{asset('images/img/portadaimagen.png')}})">
-        </section>
 
        <section>
-            <div class="flex flex-col gap-10 w-full px-[5%] mx-auto py-10 lg:py-20 bg-[#FBFBFB]">
+            <div class="flex flex-col gap-10 w-full px-[5%] xl:px-[8%] mx-auto py-10 lg:py-20 bg-[#FBFBFB]">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-10">
                        
                             <div class="flex flex-col justify-center gap-5 rounded-xl">
-                                <h2 class="leading-tight font-gotham_medium  text-4xl lg:text-5xl xl:text-6xl text-[#0181AA] ">
-                                    {{$textosnosotros->title1section ?? "Ingrese un texto"}}</h2>
-                                <div class="h-[3px] bg-[#0181AA] w-32 rounded-full -mt-2"> </div>   
-                                <p class="text-[#02324A] font-gotham_book font-normal text-lg">
-                                    {{$textosnosotros->description1section ?? "Ingrese un texto"}}
-                                </p>
-                               
+                                <h2  class="text-[#54340E] font-bignoodle text-5xl xl:text-6xl 2xl:text-7xl max-w-md 2xl:max-w-lg">Todo lo que debes saber sobre nosotros </h2>
                             </div>
                              
                             <div class="flex flex-col items-center justify-center">
-                                <img class="h-[450px] md:h-[500px] object-contain lg:h-[650px] w-full"  src="{{asset('images/img/cadmonosotros.png')}}" />
+                                <p class="font-latoregular text-base md:text-lg 2xl:text-xl text-[#54340E]">
+                                    {{$textosnosotros->description1section ?? "Ingrese un texto"}}
+                                </p>
                             </div>
                      
                     </div>
@@ -66,7 +60,126 @@
         </section>
 
 
-        <section>
+        <section class="relative" >
+            <div class="px-[5%] xl:px-[8%] py-5 w-full flex flex-col">
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 py-5">
+                    @foreach ([0, 1, 2, 3] as $index)
+                        @if ($index < 3)
+                            <div class="flex flex-col items-start justify-center w-full z-10 bg-[#F1EBE3] p-6 rounded-3xl">
+                                <div class="flex flex-row gap-2 items-center justify-start">
+                                    <img
+                                        class="max-w-12"
+                                        src="{{ $index === 0 ? asset('images/img/grill.svg') : ($index === 1 ? asset('images/img/headset.svg') : asset('images/img/familia.svg')) }}"
+                                        alt="Ícono {{ $index + 1 }}"
+                                    />
+                                    <p class="text-[#F07407] text-3xl xlg:text-4xl font-bignoodle w-full">
+                                        {{ $benefit[$index]->titulo ?? 'Ingrese texto' }}
+                                    </p>
+                                </div>
+                                <div class="pt-1">
+                                    <p class="text-[#54340E]  text-base xlg:text-lg 2xl:text-xl font-latoregular w-full leading-tight">
+                                        {{ $benefit[$index]->descripcion ?? 'Ingrese texto' }}
+                                    </p>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+            </div>  
+        </section>
+
+
+        <section class="flex flex-col justify-center items-center px-[5%] xl:px-[8%] py-10 lg:py-16 bg-[#F1EBE3] gap-12 relative">
+            <div class="flex flex-col justify-center gap-3 w-full items-center">
+                <h2 class="text-[#54340E] font-bignoodle text-5xl">La historia de nuestro nacimiento</h2>
+                <p class="font-latoregular text-base md:text-lg 2xl:text-xl text-[#54340E]">
+                    Pellentesque accumsan mauris tincidunt odio elementum imperdiet.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
+                <div class="font-latoregular text-base md:text-lg 2xl:text-xl text-[#54340E] flex flex-col gap-4">
+                    <p>Nam id eleifend ligula. Nunc ut lobortis nulla, ac congue justo. Nulla tempor varius quam. In lacus elit, convallis vitae orci vitae, ultrices accumsan diam. Etiam nec risus quis velit varius lobortis. Curabitur semper auctor posuere. In elementum placerat quam. Suspendisse mollis luctus suscipit.</p>
+
+                    <p>Integer aliquet mi ex, in iaculis ligula interdum a. Nullam sed ipsum sit amet massa bibendum viverra. Pellentesque accumsan mauris tincidunt odio elementum imperdiet. Nam fringilla scelerisque ipsum non condimentum. Aenean ornare dui sed magna sodales lobortis. Vestibulum porttitor augue vel arcu commodo, sed vulputate turpis fermentum. Nunc nec purus eu purus congue tincidunt in id quam.</p>
+                        
+                    <p>Curabitur sit amet venenatis felis. Nunc elementum pulvinar sapien, a hendrerit nibh ullamcorper ullamcorper. Nunc sit amet aliquet nunc. Maecenas nec finibus orci. In sodales venenatis dictum. Quisque sit amet ipsum turpis. Nam lobortis justo at magna volutpat, pellentesque suscipit eros commodo. In hac habitasse platea dictumst. Etiam commodo tellus et commodo dapibus.</p>
+                </div>
+
+                <div class="font-latoregular text-base md:text-lg 2xl:text-xl text-[#54340E] flex flex-col gap-4">
+                    <p>Nam id eleifend ligula. Nunc ut lobortis nulla, ac congue justo. Nulla tempor varius quam. In lacus elit, convallis vitae orci vitae, ultrices accumsan diam. Etiam nec risus quis velit varius lobortis. Curabitur semper auctor posuere. In elementum placerat quam. Suspendisse mollis luctus suscipit.</p>
+
+                    <p>Integer aliquet mi ex, in iaculis ligula interdum a. Nullam sed ipsum sit amet massa bibendum viverra. Pellentesque accumsan mauris tincidunt odio elementum imperdiet. Nam fringilla scelerisque ipsum non condimentum. Aenean ornare dui sed magna sodales lobortis. Vestibulum porttitor augue vel arcu commodo, sed vulputate turpis fermentum. Nunc nec purus eu purus congue tincidunt in id quam.</p>
+                        
+                    <p>Curabitur sit amet venenatis felis. Nunc elementum pulvinar sapien, a hendrerit nibh ullamcorper ullamcorper. Nunc sit amet aliquet nunc. Maecenas nec finibus orci. In sodales venenatis dictum. Quisque sit amet ipsum turpis. Nam lobortis justo at magna volutpat, pellentesque suscipit eros commodo. In hac habitasse platea dictumst. Etiam commodo tellus et commodo dapibus.</p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="flex flex-col justify-center items-center px-[5%] xl:px-[8%] pb-10 lg:pb-16 bg-[#F1EBE3] gap-12 relative">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 content-between">
+                
+                <div class="w-full row-span-2">
+                    <img class="h-96 md:h-[550px] xl:h-full w-full object-contain  object-center relative" src="{{asset('images/img/polleria_1.png')}}"
+                    onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
+                </div>
+
+                <div class="w-full">
+                    <img class="h-60 md:h-[350px] xl:h-full w-full object-contain  object-center relative" src="{{asset('images/img/polleria_2.png')}}"
+                    onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
+                </div>
+
+                <div class="w-full">
+                    <img class="h-60 md:h-[350px] xl:h-full w-full object-contain  object-center relative" src="{{asset('images/img/polleria_2.png')}}"
+                    onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section class="bg-[#54340E] bg-cover bg-opacity-100 relative flex flex-col gap-2">
+            <div 
+                class="bg-cover bg-center w-full" 
+                style="background-image: url({{asset('images/img/2textura.png')}});" 
+            >
+                <div class="w-full h-full absolute opacity-70 bg-white"></div>
+
+                <form id="footerBlog_Catalogo">
+                    @csrf
+                    <div class="flex flex-col gap-2 justify-center items-center py-10 lg:py-16 px-[5%]">
+                        <h2 class="text-[#54340E] font-bignoodle text-5xl z-10 text-center">Suscríbete a nuestro blog</h2>
+                        <p class="text-[#54340E] text-base font-latoregular w-full leading-tight text-center z-10">
+                            Sea el primero en conocer los lanzamientos y las novedades y perspectivas de la industria.
+                        </p>
+                        <div class="z-10 mt-8 flex flex-col gap-2">
+                            <div class="md:space-x-2 bg-white px-5 py-3 rounded-xl overflow-hidden min-w-[250px] w-full flex flex-col md:flex-row gap-3">
+                                <input type="email" name="email" id="emailFooter2" required
+                                    class="text-[#54340E] min-w-[300px] font-latoregular ring-0 border-0 focus:ring-0 focus:border-0 border-transparent ring-transparent" 
+                                    placeholder="Introduce tu email"
+                                />
+                                <input type="hidden" id="nameFooter" name="full_name" value="Usuario suscrito" />
+                                
+                                <button type="submit" class="text-white bg-[#F07407] w-full px-3 py-2 rounded-lg font-latoregular">
+                                    Suscribir
+                                </button>
+                            </div>
+                            <p class="text-[#54340E] text-sm font-latoregular w-full leading-tight text-center z-10">
+                                Nos preocupamos por tus datos en nuestra política de privacidad
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+        
+
+        {{-- <section>
             <div class="flex flex-col gap-10 w-full px-[5%] mx-auto pb-10 lg:pb-20 bg-[#FBFBFB]">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-10">
                             
@@ -98,10 +211,10 @@
                            
                     </div>
             </div>
-        </section>
+        </section> --}}
     
        
-        @if ($benefit->isEmpty())
+        {{-- @if ($benefit->isEmpty())
         @else
             <section>
                 <div class="flex flex-col gap-10 w-full px-[5%] mx-auto pt-20 pb-10 lg:pb-20 bg-[#F5F7F9]">
@@ -123,7 +236,7 @@
                     </div>
                 </div>
             </section>
-        @endif
+        @endif --}}
        
     
     </main>

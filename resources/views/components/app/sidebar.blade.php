@@ -21,129 +21,142 @@
       </button>
       <!-- Logo -->
       <a class="block mt-8 " href="{{ route('dashboard') }}">
-        <img src="{{ asset('images/img/logocadmo.png') }}" alt="CADMO" />
+        <img src="{{ asset('images/img/logopolleria.svg') }}" alt="CADMO" />
       </a>
     </div>
 
     <!-- Links -->
     <div class="space-y-8">
       <!-- Pages group Maestros -->
-      <div>
+      
         <h3 class="text-xs uppercase text-slate-500 font-semibold pl-3">
           <span class="hidden lg:block lg:sidebar-expanded:hidden 2xl:hidden text-center w-6"
             aria-hidden="true">•••</span>
-          <span class="lg:hidden lg:sidebar-expanded:block 2xl:block">Cadmo - Backend</span>
+          <span class="lg:hidden lg:sidebar-expanded:block 2xl:block">Polleria Huaillys - Backend</span>
         </h3>
-        <ul class="mt-3">
-
-          <!-- Messages -->
-          <li
-            class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 @if (in_array(Request::segment(2), ['mensajes'])) {{ 'bg-slate-900' }} @endif">
-            <a class="block text-slate-200 hover:text-white truncate transition duration-150 @if (in_array(Request::segment(2), ['mensajes'])) {{ 'hover:text-slate-200' }} @endif"
-              href="{{ route('mensajes.index') }}">
-              <div class="flex items-center justify-between">
-                <div class="grow flex items-center">
-                  <svg class="shrink-0 h-6 w-6" viewBox="0 0 24 24">
-                    <path
-                      class="fill-current @if (in_array(Request::segment(2), ['mensajes'])) {{ 'text-indigo-500' }}@else{{ 'text-slate-600' }} @endif"
-                      d="M14.5 7c4.695 0 8.5 3.184 8.5 7.111 0 1.597-.638 3.067-1.7 4.253V23l-4.108-2.148a10 10 0 01-2.692.37c-4.695 0-8.5-3.184-8.5-7.11C6 10.183 9.805 7 14.5 7z" />
-                    <path
-                      class="fill-current @if (in_array(Request::segment(2), ['mensajes'])) {{ 'text-indigo-300' }}@else{{ 'text-slate-400' }} @endif"
-                      d="M11 1C5.477 1 1 4.582 1 9c0 1.797.75 3.45 2 4.785V19l4.833-2.416C8.829 16.85 9.892 17 11 17c5.523 0 10-3.582 10-8s-4.477-8-10-8z" />
-                  </svg>
-                  <span
-                    class="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Mensajes</span>
-                </div>
-                <!-- Badge -->
-                <div class="flex flex-shrink-0 ml-2">
-                  @if ($mensajes !== 0)
-                    <span
-                      class="inline-flex items-center justify-center h-5 text-xs font-medium text-white bg-indigo-500 px-2 rounded">{{ $mensajes }}</span>
-                  @endif
-                </div>
-              </div>
-            </a>
-          </li>
- 
-
         
 
+          <!-- Messages -->
           
-          <x-menu.item id="datosgenerales" href="{{ route('datosgenerales.edit', 1) }}"
-            icon="fas fa-undo-alt">
-            Datos Generales
-          </x-menu.item>
+ 
+          <x-menu.group title="Mensajeria">
+            
+            <li
+              class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 @if (in_array(Request::segment(2), ['mensajes'])) {{ 'bg-slate-900' }} @endif">
+              <a class="block text-slate-200 hover:text-white truncate transition duration-150 @if (in_array(Request::segment(2), ['mensajes'])) {{ 'hover:text-slate-200' }} @endif"
+                href="{{ route('mensajes.index') }}">
+                <div class="flex items-center justify-between">
+                  <div class="grow flex items-center">
+                    <svg class="shrink-0 h-6 w-6" viewBox="0 0 24 24">
+                      <path
+                        class="fill-current @if (in_array(Request::segment(2), ['mensajes'])) {{ 'text-indigo-500' }}@else{{ 'text-slate-600' }} @endif"
+                        d="M14.5 7c4.695 0 8.5 3.184 8.5 7.111 0 1.597-.638 3.067-1.7 4.253V23l-4.108-2.148a10 10 0 01-2.692.37c-4.695 0-8.5-3.184-8.5-7.11C6 10.183 9.805 7 14.5 7z" />
+                      <path
+                        class="fill-current @if (in_array(Request::segment(2), ['mensajes'])) {{ 'text-indigo-300' }}@else{{ 'text-slate-400' }} @endif"
+                        d="M11 1C5.477 1 1 4.582 1 9c0 1.797.75 3.45 2 4.785V19l4.833-2.416C8.829 16.85 9.892 17 11 17c5.523 0 10-3.582 10-8s-4.477-8-10-8z" />
+                    </svg>
+                    <span
+                      class="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Mensajes</span>
+                  </div>
+                  <!-- Badge -->
+                  <div class="flex flex-shrink-0 ml-2">
+                    @if ($mensajes !== 0)
+                      <span
+                        class="inline-flex items-center justify-center h-5 text-xs font-medium text-white bg-indigo-500 px-2 rounded">{{ $mensajes }}</span>
+                    @endif
+                  </div>
+                </div>
+              </a>
+            </li>
 
-          <x-menu.item id="politicas-de-devolucion" href="{{ route('politicas-de-devolucion.edit', 1) }}"
-            icon="fas fa-undo-alt">
+            <li
+              class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 @if (in_array(Request::segment(2), ['subscripciones'])) {{ 'bg-slate-900' }} @endif">
+              <a class="block text-slate-200 hover:text-white truncate transition duration-150 @if (in_array(Request::segment(2), ['subscripciones'])) {{ 'hover:text-slate-200' }} @endif"
+                href="{{ route('subscripciones') }}">
+                <div class="flex items-center">
+                  <svg class="shrink-0 h-6 w-6" viewBox="0 0 24 24">
+                    <path
+                      class="fill-current @if (in_array(Request::segment(2), ['subscripciones'])) {{ 'text-indigo-500' }}@else{{ 'text-slate-600' }} @endif"
+                      d="M1 3h22v20H1z" />
+                    <path
+                      class="fill-current @if (in_array(Request::segment(2), ['subscripciones'])) {{ 'text-indigo-300' }}@else{{ 'text-slate-400' }} @endif"
+                      d="M21 3h2v4H1V3h2V1h4v2h10V1h4v2Z" />
+                  </svg>
+                  <span
+                    class="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Subscripciones
+                  </span>
+                </div>
+              </a>
+            </li>
+
+          </x-menu.group>
+        
+          <x-menu.group title="Configuracion">
+              <x-menu.item id="datosgenerales" href="{{ route('datosgenerales.edit', 1) }}" icon="fas fa-undo-alt">
+                Datos Generales
+              </x-menu.item>
+          </x-menu.group>
+
+          {{-- <x-menu.item id="politicas-de-devolucion" href="{{ route('politicas-de-devolucion.edit', 1) }}" icon="fas fa-undo-alt">
             Politicas de Privacidad
-          </x-menu.item>
+          </x-menu.item> --}}
+         
+          <x-menu.group title="Cadenas de texto">
+              <x-menu.item id="homeview" href="{{ route('homeview.edit', 1) }}" icon="fas fa-address-card">
+                Textos - Home
+              </x-menu.item>
 
-          <x-menu.item id="homeview" href="{{ route('homeview.edit', 1) }}" icon="fas fa-address-card">
-            Textos - Home
-          </x-menu.item>
+              <x-menu.item id="sobrenosotros" href="{{ route('nosotrosview.edit', 1) }}" icon="fas fa-address-card">
+                Textos - Nosotros
+              </x-menu.item>
 
-          <x-menu.item id="sobrenosotros" href="{{ route('nosotrosview.edit', 1) }}" icon="fas fa-address-card">
-            Textos - Nosotros
-          </x-menu.item>
+              <x-menu.item id="innovaciones" href="{{ route('innovacionesview.edit', 1) }}" icon="fas fa-address-card">
+                Textos - Contacto
+              </x-menu.item>
+          </x-menu.group>
 
-          <x-menu.item id="innovaciones" href="{{ route('innovacionesview.edit', 1) }}" icon="fas fa-address-card">
-            Textos - Innovacion
-          </x-menu.item>
+         
+          <x-menu.group title="Contenido">
+              <x-menu.item id="slider" href="{{ route('slider.index') }}" icon="fas fa-address-card">
+                Slider
+              </x-menu.item>
 
-          <x-menu.item id="productos" href="{{ route('productosview.edit', 1) }}" icon="fas fa-address-card">
+              <x-menu.item id="benefit" href="{{ route('strength.index') }}" icon="fas fa-address-card">
+                Beneficios
+              </x-menu.item>
+
+              <x-menu.item id="blog" href="{{ route('blog.index') }}" icon="fas fa-address-card">
+                Blog
+              </x-menu.item>
+             
+          </x-menu.group>
+
+
+          {{-- <x-menu.item id="productos" href="{{ route('productosview.edit', 1) }}" icon="fas fa-address-card">
             Textos - Productos
-          </x-menu.item>
+          </x-menu.item> --}}
 
-          <x-menu.item id="benefit" href="{{ route('strength.index') }}" icon="fas fa-address-card">
-            Beneficios
-          </x-menu.item>
-
-          <x-menu.item id="slider" href="{{ route('slider.index') }}" icon="fas fa-address-card">
-            Slider
-          </x-menu.item>
-
-          <x-menu.item id="liquidacion" href="{{ route('liquidacion.index') }}" icon="fas fa-address-card">
+          {{-- <x-menu.item id="liquidacion" href="{{ route('liquidacion.index') }}" icon="fas fa-address-card">
             Rubros
-          </x-menu.item>
+          </x-menu.item> --}}
 
-          <x-menu.item id="mismarcas" href="{{ route('mismarcas.index') }}" icon="fas fa-address-card">
+          {{-- <x-menu.item id="mismarcas" href="{{ route('mismarcas.index') }}" icon="fas fa-address-card">
             Marcas
-          </x-menu.item>
+          </x-menu.item> --}}
 
-          <x-menu.item id="estadisticas" href="{{ route('misclientes.index') }}" icon="fas fa-address-card">
+          {{-- <x-menu.item id="estadisticas" href="{{ route('misclientes.index') }}" icon="fas fa-address-card">
             Estadisticas
-          </x-menu.item>
+          </x-menu.item> --}}
 
-          <x-menu.item id="testimonios" href="{{ route('testimonios.index') }}" icon="fas fa-address-card">
+          {{-- <x-menu.item id="testimonios" href="{{ route('testimonios.index') }}" icon="fas fa-address-card">
             Testimonios
-          </x-menu.item>
+          </x-menu.item> --}}
 
-          <x-menu.item id="faqs" href="{{ route('faqs.index') }}" icon="fas fa-address-card">
+          {{-- <x-menu.item id="faqs" href="{{ route('faqs.index') }}" icon="fas fa-address-card">
             Preguntas Frecuentes
-          </x-menu.item>
+          </x-menu.item> --}}
 
-            <!-- Subscripciones -->
-          {{-- <li
-            class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 @if (in_array(Request::segment(2), ['subscripciones'])) {{ 'bg-slate-900' }} @endif">
-            <a class="block text-slate-200 hover:text-white truncate transition duration-150 @if (in_array(Request::segment(2), ['subscripciones'])) {{ 'hover:text-slate-200' }} @endif"
-              href="{{ route('subscripciones') }}">
-              <div class="flex items-center">
-                <svg class="shrink-0 h-6 w-6" viewBox="0 0 24 24">
-                  <path
-                    class="fill-current @if (in_array(Request::segment(2), ['subscripciones'])) {{ 'text-indigo-500' }}@else{{ 'text-slate-600' }} @endif"
-                    d="M1 3h22v20H1z" />
-                  <path
-                    class="fill-current @if (in_array(Request::segment(2), ['subscripciones'])) {{ 'text-indigo-300' }}@else{{ 'text-slate-400' }} @endif"
-                    d="M21 3h2v4H1V3h2V1h4v2h10V1h4v2Z" />
-                </svg>
-                <span
-                  class="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Subscripciones
-                </span>
-              </div>
-            </a>
-          </li> --}}
-
+          <!-- Subscripciones -->
 
           {{-- <li
             class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 @if (in_array(Request::segment(2), ['pedidos'])) {{ 'bg-slate-900' }} @endif">
@@ -249,33 +262,14 @@
             </a>
           </li> --}}
 
-          <!-- Blog -->
+          
 
-          {{-- <li
-            class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 @if (in_array(Request::segment(2), ['blog'])) {{ 'bg-slate-900' }} @endif">
-            <a class="block text-slate-200 hover:text-white truncate transition duration-150 @if (in_array(Request::segment(2), ['blog'])) {{ 'hover:text-slate-200' }} @endif"
-              href="{{ route('blog.index') }}">
-              <div class="flex items-center">
-                <svg class="shrink-0 h-6 w-6" viewBox="0 0 24 24">
-                  <path
-                    class="fill-current @if (in_array(Request::segment(2), ['blog'])) {{ 'text-indigo-500' }}@else{{ 'text-slate-600' }} @endif"
-                    d="M1 3h22v20H1z" />
-                  <path
-                    class="fill-current @if (in_array(Request::segment(2), ['blog'])) {{ 'text-indigo-300' }}@else{{ 'text-slate-400' }} @endif"
-                    d="M21 3h2v4H1V3h2V1h4v2h10V1h4v2Z" />
-                </svg>
-                <span
-                  class="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Blog</span>
-              </div>
-            </a>
-          </li> --}}
-
-        </ul>
-      </div>
+        
+      
 
       <x-menu.group title="Productos">
         <x-menu.item id="category" href="{{ route('categorias.index') }}" icon="fas fa-list-alt">Categorías</x-menu.item>
-        <x-menu.item id="subcategory" href="{{ route('subcategorias.index') }}" icon="fas fa-list-alt">Subcategorías</x-menu.item>
+        {{-- <x-menu.item id="subcategory" href="{{ route('subcategorias.index') }}" icon="fas fa-list-alt">Subcategorías</x-menu.item> --}}
         {{-- <x-menu.item id="microcategory" href="{{ route('microcategorias.index') }}" icon="fas fa-list-alt">Microcategorías</x-menu.item> --}}
         <x-menu.item id="product" href="{{ route('products.index') }}" icon="fas fa-pager">Productos</x-menu.item>
       </x-menu.group>

@@ -10,15 +10,16 @@
 
 @section('content')
     <main>
-        <section class="w-11/12 md:w-10/12 mx-auto flex flex-col gap-10 pt-52 pb-16" data-aos="fade-up" data-aos-offset="150">
+        <section class="w-full px-[5%] xl:px-[8%] py-10 lg:py-16 flex flex-col" data-aos="fade-up" data-aos-offset="150">
+            
             <div class="flex flex-col gap-5">
-                <h3 class="font-semibold font-roboto text-text16 text-[#FF5E14]">Blog</h3>
-                <h2 class="font-roboto font-bold text-text48 md:text-text56 text-[#082252] leading-tight tracking-tight">
-                    {{$post->title}}
+                
+                <h2 class="text-[#54340E] font-bignoodle text-4xl xl:text-5xl 2xl:text-6xl text-center max-w-2xl 2xl:max-w-3xl mx-auto">
+                    {{$post->title}} nec placerat sapien felis vitae dui. nec placerat sapien felis vitae dui.
                 </h2>
-                <p class="font-roboto font-semibold text-text20 text-[#0C4AC3]">{{ \Carbon\Carbon::parse($post->created_at)->translatedFormat('d F, Y') }}</p>
 
-                {{-- <p class="text-[#FF5E14]">////////////////////////////</p> --}}
+                <p class="font-latoregular text-base md:text-lg 2xl:text-xl text-[#54340E] text-center">Publicado: {{ \Carbon\Carbon::parse($post->created_at)->translatedFormat('d F, Y') }}</p>
+
 
                 @if($post->url_video)
                     <div class="w-full" data-aos="fade-up" data-aos-offset="150">
@@ -26,9 +27,7 @@
                     </div>
                 @endif
                
-
-
-                <div class="flex flex-col gap-2 text-[#082252] font-roboto font-normal text-text18 py-4">
+                <div class="font-latoregular text-base md:text-lg 2xl:text-xl text-[#54340E] py-4">
                     {!!$post->description!!}
                 </div>
 
@@ -40,19 +39,8 @@
                 @endif
             </div>
 
-            {{-- <div>
-                <div class="mb-4 flex justify-between border-t-2 pt-5" aria-label="Pagination">
-                    <a class="px-2 py-2 text-[#3F76BB] flex gap-2" href="#">
-                        <img src="{{asset('images/svg/image_38.svg')}}" alt="previo" />
-                        <span class="font-bold font-roboto text-text14 text-[#FF5E14]">Anterior</span>
-                    </a>
-
-                    <a class="px-2 py-2 text-[#3F76BB] flex gap-2" href="#">
-                        <span class="font-bold font-roboto text-text14 text-[#FF5E14]">Próximo</span>
-                        <img src="{{asset('images/svg/image_37.svg')}}" alt="next" />
-                    </a>
-                </div>
-            </div> --}}
+            
+            
         </section>
     </main>
 

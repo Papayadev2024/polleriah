@@ -93,7 +93,7 @@
                         <div class="swiper-slide">
                             <div class="w-full">
                             <a href="{{$slide->link2}}">  
-                                <div class="flex h-[500px] w-full relative z-10 md:flex-col items-end justify-end">
+                                <div class="flex h-[500px] 2xl:h-[700px] w-full relative z-10 md:flex-col items-end justify-end">
                                     <img class="block h-full w-full object-cover object-center"
                                         src="{{ asset($slide->url_image . $slide->name_image) }}" 
                                         onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';"
@@ -175,14 +175,14 @@
                     <div class="w-full max-h-[400px] rounded-lg overflow-hidden relative">
                         <img class="w-full h-full object-cover object-center" src="{{$ultimoProducto->imagen}}" />
                         <div class="flex flex-row top-[5%] left-[5%] absolute text-white">
-                        <div class=""><span class="bg-[#F07407] text-sm px-3 py-1 md:py-2 rounded-lg leading-none font-latoregular">Promos del mes</span></div>
+                        {{-- <div class=""><span class="bg-[#F07407] text-sm px-3 py-1 md:py-2 rounded-lg leading-none font-latoregular">Promos del mes</span></div> --}}
                     </div>
-                    <div class="flex flex-col gap-2 xl:flex-row xl:justify-between bottom-[5%] px-[5%] absolute text-white w-full">
+                    <div class="flex flex-col items-end gap-2 xl:flex-row xl:justify-between bottom-[5%] px-[5%] absolute text-white w-full">
                         <div class="flex flex-col max-w-md">
                             <a href="{{route('producto', $ultimoProducto->id)}}">
                                 <h2 class="font-latoregular text-lg line-clamp-1">{{$ultimoProducto->producto}}</h2>
                             </a>
-                            <p class="font-latoregular text-sm">Promo válida hasta acabar stock</p>
+                            <p class="font-latoregular text-sm max-w-md line-clamp-1">{!! $ultimoProducto->extract ?? $ultimoProducto->description !!} asdasdassssasdasdasdasdasa</p>
                         </div>
                         <div class="flex flex-row justify-start items-center gap-3 xl:gap-0 xl:flex-col xl:items-start font-latobold">
                            @if ($ultimoProducto->descuento > 0)
@@ -361,7 +361,7 @@
                     <div class="flex flex-col gap-2 justify-center items-center py-10 lg:py-16 px-[5%]">
                         <h2 class="text-white font-bignoodle text-5xl z-10 text-center">Suscríbete a nuestro blog</h2>
                         <p class="text-white text-base font-latoregular w-full leading-tight text-center z-10">
-                            Recetas tradicionales peruanas, frescas y deliciosas, directo a tu puerta.
+                            Sea el primero en conocer los lanzamientos y las novedades y perspectivas de la industria.
                         </p>
                         <div class="z-10 mt-8 flex flex-col gap-2">
                             <div class="md:space-x-2 bg-white px-5 py-3 rounded-xl overflow-hidden min-w-[250px] w-full flex flex-col md:flex-row gap-3">

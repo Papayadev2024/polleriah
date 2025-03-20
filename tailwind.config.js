@@ -137,6 +137,7 @@ export default {
                 lg: "1024px",
                 "2lg": "1100px",
                 xl: "1280px",
+                "xlg": "1386px",
                 "2xl": "1536px",
             },
 
