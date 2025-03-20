@@ -250,41 +250,39 @@
 
     
 
-
-        <section class="flex flex-col justify-center items-center px-[5%] xl:px-[8%] py-10 lg:py-16 bg-[#F1EBE3] gap-12 relative">
-
-            <div class="flex flex-col justify-start gap-3 md:flex-row md:justify-between w-full md:items-center">
-                <h2 class="text-[#54340E] font-bignoodle text-5xl">Nuestra Carta</h2>
-                <div class="flex flex-row">
-                    <a href="{{route('catalogo.all')}}"><div class="bg-[#F07407] text-white rounded-lg px-3 py-1.5 text-base font-latoregular">
-                    Ver toda la carta
-                    </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="swiper categorias w-full h-max">
-                <div class="swiper-wrapper">                 
-                   @foreach ($category as $categoria)
-                        <div class="swiper-slide">
-                            <div class="group flex flex-col rounded-lg border border-[#DDCCBA] overflow-hidden hover:bg-[#F07407]">
-                                <a href="{{route('catalogo', $categoria->id )}}" class="botonopciones">
-                                    <img class="w-full h-full aspect-[3/2] object-cover" src="{{asset($categoria->url_image . $categoria->name_image)}}" />
-                                    
-                                    <div class="text-[#54340E] font-latoregular font-semibold text-lg px-3 py-3.5 w-full flex flex-col gap-1">
-                                        <div>
-                                            <h2 class="line-clamp-2 group-hover:text-white leading-none">{{$categoria->name}}</h2>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>    
+        @if ($category->isEmpty())
+        @else
+            <section class="flex flex-col justify-center items-center px-[5%] xl:px-[8%] py-10 lg:py-16 bg-[#F1EBE3] gap-12 relative">
+                <div class="flex flex-col justify-start gap-3 md:flex-row md:justify-between w-full md:items-center">
+                    <h2 class="text-[#54340E] font-bignoodle text-5xl">Nuestra Carta</h2>
+                    <div class="flex flex-row">
+                        <a href="{{route('catalogo.all')}}"><div class="bg-[#F07407] text-white rounded-lg px-3 py-1.5 text-base font-latoregular">
+                        Ver toda la carta
                         </div>
-                    @endforeach
+                        </a>
+                    </div>
                 </div>
-            </div>
-
-        </section>
-
+                <div class="swiper categorias w-full h-max">
+                    <div class="swiper-wrapper">                 
+                    @foreach ($category as $categoria)
+                            <div class="swiper-slide">
+                                <div class="group flex flex-col rounded-lg border border-[#DDCCBA] overflow-hidden hover:bg-[#F07407]">
+                                    <a href="{{route('catalogo', $categoria->id )}}" class="botonopciones">
+                                        <img class="w-full h-full aspect-[3/2] object-cover" src="{{asset($categoria->url_image . $categoria->name_image)}}" />
+                                        
+                                        <div class="text-[#54340E] font-latoregular font-semibold text-lg px-3 py-3.5 w-full flex flex-col gap-1">
+                                            <div>
+                                                <h2 class="line-clamp-2 group-hover:text-white leading-none">{{$categoria->name}}</h2>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>    
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+        @endif
 
         @if ($destacados->isEmpty())
         @else
@@ -313,7 +311,7 @@
                                         <div class="text-[#54340E] font-latobold text-xl px-3 pt-2 pb-3 w-full flex flex-col gap-1">
                                             <div class="flex flex-col">
                                                 <h2 class="line-clamp-1">{{$destacado->producto}}</h2>
-                                                <div class="line-clamp-2 font-latoregular text-sm h-9 leading-tight flex flex-col justify-center">
+                                                <div class="!line-clamp-2 font-latoregular text-sm leading-tight flex flex-col justify-center">
                                                     {!! $destacado->extract ?? $destacado->description !!}
                                                 </div>
                                                 <div class="flex flex-row justify-start items-center gap-2 font-latobold mt-1">

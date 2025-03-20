@@ -150,8 +150,9 @@ class IndexController extends Controller
             $general = General::all();
             $textoproducto = ProductosView::first();
             $faqs = Faqs::where('status', '=', 1)->where('visible', '=', 1)->get();
-            $categorias = Category::where('status', '=', 1)->where('destacar', '=', 1)->where('visible', '=', 1)->orderBy('order', 'asc')->get();
-           
+            $categorias = Category::where('status', '=', 1)->where('visible', '=', 1)->orderBy('order', 'asc')->get();
+
+            
             $subcategorias = Subcategory::all();
             $microcategorias = Microcategory::all();
             $testimonie = Testimony::where('status', '=', 1)->where('visible', '=', 1)->get();
@@ -641,7 +642,7 @@ class IndexController extends Controller
     public function blog($filtro)
     {
         try {
-            $categorias = Category::where('status', '=', 1)->where('visible', '=', 1)->get();
+            $categorias = Category::where('status', '=', 1)->where('visible', '=', 1)->whereHas('blogs')->get();
 
             if ($filtro == 0) {
                 $posts = Blog::where('status', '=', 1)->where('visible', '=', 1)->get();

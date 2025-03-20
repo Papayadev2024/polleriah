@@ -6,6 +6,8 @@ use App\Models\Category;
 use App\Models\Collection;
 use App\Models\General;
 use App\Models\Message;
+use App\Models\Blog;
+use App\Models\Products;
 use App\Models\PolyticsCondition;
 use App\Models\TermsAndCondition;
 use Illuminate\Contracts\Pagination\Paginator;
@@ -45,10 +47,15 @@ class AppServiceProvider extends ServiceProvider
             // Obtener los datos del footer
             $submenucategorias = Category::all(); // Suponiendo que tienes un modelo Footer y un método footerData() en él
             $submenucolecciones = Collection::all();
+            $posts = Blog::where('status', '=', 1)->where('visible', '=', 1)->get();
             $general = General::all();
+            $productos = Products::where('visible', '=', 1)->get();
+
             // Pasar los datos a la vista
             $view->with('submenucategorias', $submenucategorias)
                  ->with('submenucolecciones', $submenucolecciones)
+                 ->with('posts', $posts)
+                 ->with('productos', $productos)
                  ->with('general', $general);
         });
 

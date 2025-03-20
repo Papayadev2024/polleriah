@@ -73,7 +73,7 @@
                             <div class="text-[#54340E] font-latobold text-xl px-3 pt-2 pb-3 w-full flex flex-col gap-1">
                                 <div class="flex flex-col">
                                     <h2 class="line-clamp-1">{{$product->producto}}</h2>
-                                    <div class="line-clamp-2 font-latoregular text-sm h-9 leading-tight flex flex-col justify-center">
+                                    <div class="!line-clamp-2 font-latoregular text-sm leading-tight flex flex-col justify-center">
                                         {!! $product->extract ?? $product->description !!}
                                     </div>
                                     <div class="flex flex-row justify-start items-center gap-2 font-latobold mt-1">

@@ -62,12 +62,16 @@
                         <li class="flex flex-col">
                             <a href="{{ url('/nosotros') }}" class="">Nosotros</a>
                         </li>
-                        <li class="flex flex-col">
-                            <a href="{{ route('catalogo.all') }}" class="">Carta y Promos</a>
-                        </li>
-                        <li class="flex flex-col">
-                            <a href="{{ url('/blog/0') }}" class="">Wayquicha</a>
-                        </li>
+                        @if (count($productos) > 0)
+                          <li class="flex flex-col">
+                              <a href="{{ route('catalogo.all') }}" class="">Carta y Promos</a>
+                          </li>
+                        @endif
+                        @if (count($posts) > 0)
+                          <li class="flex flex-col">
+                              <a href="{{ url('/blog/0') }}" class="">Wayquicha</a>
+                          </li>
+                        @endif
                         <li class="flex flex-col">
                             <a href="{{ url('/contacto') }}" class="">Contacto</a>
                         </li>

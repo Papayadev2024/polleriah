@@ -15,16 +15,18 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         //
-        $cat = ['Energía Flexible', 'Energía de Precisión'];
-        $cat2 = ['Lo que no se mide, no se optimiza. Soluciones integrales para la gestión energética en plantas industriales y locales comerciales. Calcula balances de energía para detectar hurtos, pérdidas en cables y transformadores, Ten el control de tus consumos y logra la máxima optimización.', 
-                'Exactitud en consumos. Equipos de medición de energía eléctrica para aplicaciones comerciales industriales de alta precisión. Calcula el consumo energético y la proyección de demanda logrando optimizarlos y validar la facturación mensual.'];
-        $ids = [1, 2];
-        for ($i = 0; $i < 2; $i++) {
+        $cat = ['Pollos a la brasa', 'Ensaladas', 'Parrillas especiales', 'Bebidas', 'Parrillas'];
+        $ids = [1, 2, 3, 4, 5];
+        $img = ['cat_1.png', 'cat_2.png', 'cat_3.png', 'cat_4.png', 'cat_5.png'];
+        for ($i = 0; $i < 5; $i++) {
             Category::create([
                 'id' => $ids[$i],
                 'name' => $cat[$i],
-                'description' => $cat2[$i],
+                'url_image' => 'images/img/',
+                'name_image' => $img[$i],
+                'description' => '',
                 'status' => 1,
+                'destacar' => 1,
                 'visible' => 1,
             ]);
         }

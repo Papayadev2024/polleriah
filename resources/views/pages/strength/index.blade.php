@@ -2,8 +2,8 @@
   <div class="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
 
     <section class="py-4 border-b border-slate-100 dark:border-slate-700">
-      <a href="{{ route('strength.create') }}"
-        class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded text-sm">Agregar beneficio</a>
+      {{-- <a href="{{ route('strength.create') }}"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded text-sm">Agregar beneficio</a> --}}
     </section>
 
 
@@ -65,12 +65,12 @@
                       class="bg-yellow-400 px-3 py-2 rounded text-white  "><i
                         class="fa-regular fa-pen-to-square"></i></a>
 
-                    <form action="" method="POST">
+                    {{-- <form action="" method="POST">
                       @csrf
                       <a data-idService='{{ $item->id }}'
                         class="btn_delete bg-red-600 px-3 py-2 rounded text-white cursor-pointer"><i
                           class="fa-regular fa-trash-can"></i></a>
-                    </form>
+                    </form> --}}
 
                   </td>
                 </tr>
