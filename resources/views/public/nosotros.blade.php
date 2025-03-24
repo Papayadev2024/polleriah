@@ -43,19 +43,24 @@
 
        <section>
             <div class="flex flex-col gap-10 w-full px-[5%] xl:px-[8%] mx-auto py-10 lg:py-20 bg-[#FBFBFB]">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-10">
                        
                             <div class="flex flex-col justify-center gap-5 rounded-xl">
-                                <h2  class="text-[#54340E] font-bignoodle text-5xl xl:text-6xl 2xl:text-7xl max-w-md 2xl:max-w-lg">Todo lo que debes saber sobre nosotros </h2>
+                                @if ($textosnosotros->title1section)
+                                    <h2  class="text-[#54340E] font-bignoodle text-5xl xl:text-6xl 2xl:text-7xl max-w-md 2xl:max-w-lg">{{$textosnosotros->title1section}}</h2>
+                                @endif
                             </div>
                              
                             <div class="flex flex-col items-center justify-center">
-                                <p class="font-latoregular text-base md:text-lg 2xl:text-xl text-[#54340E]">
-                                    {{$textosnosotros->description1section ?? "Ingrese un texto"}}
-                                </p>
+                                
+                                @if ($textosnosotros->description1section)
+                                    <p class="font-latoregular text-base md:text-lg 2xl:text-xl text-[#54340E]">
+                                        {{$textosnosotros->description1section}}
+                                    </p>
+                                @endif
                             </div>
                      
-                    </div>
+                </div>
             </div>
         </section>
 
@@ -91,27 +96,29 @@
 
         <section class="flex flex-col justify-center items-center px-[5%] xl:px-[8%] py-10 lg:py-16 bg-[#F1EBE3] gap-12 relative">
             <div class="flex flex-col justify-center gap-3 w-full items-center">
-                <h2 class="text-[#54340E] font-bignoodle text-5xl">La historia de nuestro nacimiento</h2>
-                <p class="font-latoregular text-base md:text-lg 2xl:text-xl text-[#54340E]">
-                    Pellentesque accumsan mauris tincidunt odio elementum imperdiet.
-                </p>
+                @if ($textosnosotros->title2section)
+                    <h2 class="text-[#54340E] font-bignoodle text-5xl">{{$textosnosotros->title2section}}</h2>
+                @endif
+
+                @if ($textosnosotros->description2section)
+                    <p class="font-latoregular text-base md:text-lg 2xl:text-xl text-[#54340E]">
+                       {{$textosnosotros->description2section}}
+                    </p>
+                @endif
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10">
-                <div class="font-latoregular text-base md:text-lg 2xl:text-xl text-[#54340E] flex flex-col gap-4">
-                    <p>Nam id eleifend ligula. Nunc ut lobortis nulla, ac congue justo. Nulla tempor varius quam. In lacus elit, convallis vitae orci vitae, ultrices accumsan diam. Etiam nec risus quis velit varius lobortis. Curabitur semper auctor posuere. In elementum placerat quam. Suspendisse mollis luctus suscipit.</p>
 
-                    <p>Integer aliquet mi ex, in iaculis ligula interdum a. Nullam sed ipsum sit amet massa bibendum viverra. Pellentesque accumsan mauris tincidunt odio elementum imperdiet. Nam fringilla scelerisque ipsum non condimentum. Aenean ornare dui sed magna sodales lobortis. Vestibulum porttitor augue vel arcu commodo, sed vulputate turpis fermentum. Nunc nec purus eu purus congue tincidunt in id quam.</p>
-                        
-                    <p>Curabitur sit amet venenatis felis. Nunc elementum pulvinar sapien, a hendrerit nibh ullamcorper ullamcorper. Nunc sit amet aliquet nunc. Maecenas nec finibus orci. In sodales venenatis dictum. Quisque sit amet ipsum turpis. Nam lobortis justo at magna volutpat, pellentesque suscipit eros commodo. In hac habitasse platea dictumst. Etiam commodo tellus et commodo dapibus.</p>
+                <div class="font-latoregular text-base md:text-lg 2xl:text-xl text-[#54340E] flex flex-col gap-4">
+                    @if ($textosnosotros->description3section)
+                        {!!$textosnosotros->description3section!!}
+                    @endif
                 </div>
 
                 <div class="font-latoregular text-base md:text-lg 2xl:text-xl text-[#54340E] flex flex-col gap-4">
-                    <p>Nam id eleifend ligula. Nunc ut lobortis nulla, ac congue justo. Nulla tempor varius quam. In lacus elit, convallis vitae orci vitae, ultrices accumsan diam. Etiam nec risus quis velit varius lobortis. Curabitur semper auctor posuere. In elementum placerat quam. Suspendisse mollis luctus suscipit.</p>
-
-                    <p>Integer aliquet mi ex, in iaculis ligula interdum a. Nullam sed ipsum sit amet massa bibendum viverra. Pellentesque accumsan mauris tincidunt odio elementum imperdiet. Nam fringilla scelerisque ipsum non condimentum. Aenean ornare dui sed magna sodales lobortis. Vestibulum porttitor augue vel arcu commodo, sed vulputate turpis fermentum. Nunc nec purus eu purus congue tincidunt in id quam.</p>
-                        
-                    <p>Curabitur sit amet venenatis felis. Nunc elementum pulvinar sapien, a hendrerit nibh ullamcorper ullamcorper. Nunc sit amet aliquet nunc. Maecenas nec finibus orci. In sodales venenatis dictum. Quisque sit amet ipsum turpis. Nam lobortis justo at magna volutpat, pellentesque suscipit eros commodo. In hac habitasse platea dictumst. Etiam commodo tellus et commodo dapibus.</p>
+                    @if ($textosnosotros->description4section)
+                        {!!$textosnosotros->description4section!!}
+                    @endif
                 </div>
             </div>
         </section>
@@ -151,10 +158,16 @@
                 <form id="footerBlog_Catalogo">
                     @csrf
                     <div class="flex flex-col gap-2 justify-center items-center py-10 lg:py-16 px-[5%]">
-                        <h2 class="text-[#54340E] font-bignoodle text-5xl z-10 text-center">Suscríbete a nuestro blog</h2>
-                        <p class="text-[#54340E] text-base font-latoregular w-full leading-tight text-center z-10">
-                            Sea el primero en conocer los lanzamientos y las novedades y perspectivas de la industria.
-                        </p>
+                        @if ($textosnosotros->title5section)
+                            <h2 class="text-[#54340E] font-bignoodle text-5xl z-10 text-center">{{$textosnosotros->title5section}}</h2>
+                        @endif
+
+                        @if ($textosnosotros->description5section)
+                            <p class="text-[#54340E] text-base font-latoregular w-full leading-tight text-center z-10">
+                                {{$textosnosotros->description5section}}
+                            </p>
+                        @endif
+                       
                         <div class="z-10 mt-8 flex flex-col gap-2">
                             <div class="md:space-x-2 bg-white px-5 py-3 rounded-xl overflow-hidden min-w-[250px] w-full flex flex-col md:flex-row gap-3">
                                 <input type="email" name="email" id="emailFooter2" required
@@ -167,9 +180,11 @@
                                     Suscribir
                                 </button>
                             </div>
-                            <p class="text-[#54340E] text-sm font-latoregular w-full leading-tight text-center z-10">
-                                Nos preocupamos por tus datos en nuestra política de privacidad
-                            </p>
+                            @if ($textosnosotros->footer5section)
+                                <p class="text-[#54340E] text-sm font-latoregular w-full leading-tight text-center z-10">
+                                    {{$textosnosotros->footer5section}}
+                                </p>
+                            @endif
                         </div>
                     </div>
                 </form>

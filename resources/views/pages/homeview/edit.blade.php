@@ -87,7 +87,7 @@
                                         </div>
                                     </div>
 
-                                    <h2 class="md:col-span-5 font-semibold text-slate-800 dark:text-slate-100 text-xl tracking-tight">Blog</h2>
+                                    <h2 class="md:col-span-5 font-semibold text-slate-800 dark:text-slate-100 text-xl tracking-tight">Suscripcion</h2>
 
                                     <div class="md:col-span-5">
                                         <label for="title4section">Titulo</label>

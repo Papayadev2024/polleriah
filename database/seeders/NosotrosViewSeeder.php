@@ -16,19 +16,18 @@ class NosotrosViewSeeder extends Seeder
         NosotrosView::updateOrCreate([
             'id' => 1
         ],[
-            'title1section' => 'Nuestra historia, nuestro nacimiento',
-            'description1section' => 'Nullam nec orci dui. Praesent tristique facilisis quam, a egestas lorem consectetur fringilla. Suspendisse cursus erat eget ante auctor, non hendrerit ipsum egestas. Nullam nec orci dui. Praesent tristique facilisis quam, a egestas lorem consectetur fringilla. Suspendisse cursus erat eget ante auctor, non hendrerit ipsum egestas.',
-            'url_image2section' => '',
-
+            'title1section' => 'Todo lo que debes saber sobre nosotros',
+            'description1section' => 'Nullam sed ipsum sit amet massa bibendum viverra. Pellentesque accumsan mauris tincidunt odio elementum imperdiet. Nam fringilla scelerisque ipsum non condimentum. Aenean ornare dui sed magna sodales lobortis. Vestibulum porttitor augue vel arcu commodo, sed vulputate turpis fermentum.',
             
-            'title3section' => 'Nuestras motivaciones diarias',
-            'url_image4section' => '',
+            'title2section' => 'La historia de nuestro nacimiento',
+            'description2section' => 'Pellentesque accumsan mauris tincidunt odio elementum imperdiet.',
 
-            'title3secondsection' => 'Misión',
-            'description3secondsection' => 'Conectamos dispositivos a la nube. Desarrollamos e integramos soluciones basadas en el Internet de las cosas (Internet of Things - IoT) para proyectos de Smart Grid a la medida. Utilizamos protocolos de comunicación que permiten la escabilidad de nuestras soluciones y flexibilidad para la integración a diferentes industrias. Energía inteligente.' ,
+            'description3section' => '<p>Nullam sed ipsum sit amet massa bibendum viverra. Pellentesque accumsan mauris tincidunt odio elementum imperdiet. Nam fringilla scelerisque ipsum non condimentum. Aenean ornare dui sed magna sodales lobortis. Vestibulum porttitor augue vel arcu commodo, sed vulputate turpis fermentum.</p>',
+            'description4section' => '<p>Nullam sed ipsum sit amet massa bibendum viverra. Pellentesque accumsan mauris tincidunt odio elementum imperdiet. Nam fringilla scelerisque ipsum non condimentum. Aenean ornare dui sed magna sodales lobortis. Vestibulum porttitor augue vel arcu commodo, sed vulputate turpis fermentum.</p>',
 
-            'title4section' => 'Visión',
-            'description4section' => 'Software de administración de energía, ofrece un conjunto de soluciones: desde facturación, monitoreo, eficiencia energética y respuesta a la demanda hasta análisis exhaustivos de calidad de energía y soporte de procesos centrales de planificación y previsión para generadores, transmisores y distribuidores de energía e también para grandes proyectos residenciales, edificios de oficinas, centros comerciales, entre otros.' ,
+            'title5section' => 'Suscríbete a nuestro blog',
+            'description5section' => 'Sea el primero en conocer los lanzamientos y las novedades y perspectivas de la industria.', 
+            'footer5section' => 'Nos preocupamos por tus datos en nuestra política de privacidad', 
 
         ]);
     }
