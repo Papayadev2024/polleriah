@@ -38,7 +38,7 @@
 
           <!-- Messages -->
           
- 
+        
           <x-menu.group title="Mensajeria">
             
             <li
@@ -110,9 +110,9 @@
                 Textos - Nosotros
               </x-menu.item>
 
-              <x-menu.item id="innovaciones" href="{{ route('innovacionesview.edit', 1) }}" icon="fas fa-address-card">
+              {{-- <x-menu.item id="innovaciones" href="{{ route('innovacionesview.edit', 1) }}" icon="fas fa-address-card">
                 Textos - Contacto
-              </x-menu.item>
+              </x-menu.item> --}}
           </x-menu.group>
 
          
