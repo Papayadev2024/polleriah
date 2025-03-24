@@ -92,7 +92,7 @@
                     @foreach ($slider as $slide)                      
                         <div class="swiper-slide">
                             <div class="w-full">
-                            <a href="{{$slide->link2}}">  
+                            <a href="{{$slide->link1}}">  
                                 <div class="flex h-[500px] 2xl:h-[700px] w-full relative z-10 md:flex-col items-end justify-end">
                                     <img class="block h-full w-full object-cover object-center"
                                         src="{{ asset($slide->url_image . $slide->name_image) }}" 

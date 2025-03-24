@@ -23,18 +23,17 @@ class GeneralSeeder extends Seeder
             'cellphone' => '01-6556920' ,
             'office_phone' => '01-6556922' ,
             'email' => 'ventas@hpi.com.pe',
-            'facebook' => 'https://www.facebook.com/people/Hydrotech-Pru-Import-EIRL/100063724503852/',
-            'instagram' => 'https://www.instagram.com/hpi_peru/?hl=es',
-            'youtube' => 'https://www.youtube.com/channel/UCxsk5-MS66lyPUWiV16ZbLg',
+            'facebook' => 'https://www.facebook.com/',
+            'instagram' => 'https://www.instagram.com/',
+            'youtube' => 'https://www.youtube.com/',
             'twitter' => '',
-            'tiktok' => 'https://www.tiktok.com/@hydrotech.peru',
-            'linkedin' => 'https://www.linkedin.com/company/hydrotech-peru-import-hpi/',
+            'tiktok' => 'https://www.tiktok.com/',
+            'linkedin' => 'https://www.linkedin.com/',
             'whatsapp' => '51992262598' ,
-            'form_email' => 'ventas@hpi.com.pe',
+            'form_email' => 'ventas@huaillys.com',
             'business_hours' => 'horas',
             'mensaje_whatsapp' => 'Hola estamos atentos a lo que ud desee',
-            'aboutus' => 'Dommine se encuentra interesado en ti. Si deseas tener más información sobre nuestros productos y promociones, entonces completa el siguiente formulario para contactarte o ten en cuenta nuestra ubicación, número telefónico y dirección de correo electrónico.'
-
+            'aboutus' => 'Mauris gravida, nunc quis egestas tempus, quam quam cursus lectus, nec placerat sapien felis vitae dui',
         ]);
     }
 }

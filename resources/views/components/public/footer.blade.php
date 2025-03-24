@@ -19,7 +19,7 @@
             <img src="{{ asset('images/img/logofooterpolleria.svg') }}" alt="Polleria Huaylish" class="h-28" />
           </a>
           <p class="text-base max-w-md text-center line-clamp-2 font-latoregular">
-            asdasdasdasdasdasdasdas
+            {{ $general[0]->aboutus }}
           </p>
           <a href="{{route('nosotros')}}" class="text-white bg-[#F07407] w-auto px-6 py-1.5 rounded-lg font-latoregular font-semibold tracking-wide">
               Nosotros

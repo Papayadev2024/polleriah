@@ -36,7 +36,7 @@
                 </div>
               </div>
 
-              <div class="md:col-span-5">
+              {{-- <div class="md:col-span-5">
                 <label for="description">Descripción de servicio</label>
                 <div class="relative mb-2 mt-2">
                   <div class="absolute inset-y-0 left-0 flex items-start top-3 pl-3 pointer-events-none ">                       
@@ -46,7 +46,7 @@
                     class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Descripción">{{ $slider->description }}</textarea>
                 </div>
-              </div>
+              </div> --}}
 
               {{-- <div class="md:col-span-3">
                 <label for="botontext1">Texto para botón</label>
@@ -56,10 +56,10 @@
                     </div>
                     <input type="text" id="botontext1" name="botontext1" value="{{ $slider->botontext1 }}" class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Titulo para botón 1">
                 </div>
-            </div>
+            </div> --}}
 
 
-            <div class="md:col-span-2">
+            <div class="md:col-span-5">
                 <label for="link1">URL para botón</label>
                 <div class="relative mb-2  mt-2">
                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">                       
@@ -67,7 +67,7 @@
                     </div>
                     <input type="text" id="link1" name="link1" value="{{ $slider->link1 }}" class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Url para botón 1">
                 </div>
-            </div> --}}
+            </div>
 
 
             {{-- <div class="md:col-span-3">
